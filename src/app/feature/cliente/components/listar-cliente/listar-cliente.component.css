@@ -1,0 +1,31 @@
+.container {
+    justify-content: center;
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-top: 10px;
+}
+
+.mat-table {
+    overflow: auto;
+}
+
+.mat-header-cell {
+    padding: 0.5rem;
+    text-align: center;
+}
+
+.mat-cell {
+    padding: 0.5rem;
+    text-align: center;
+}
+
+h1 {
+    text-align: center;
+    margin-top: 1rem;
+    font-weight: bold;
+}
+
+.accion_button {
+    margin-left: 5px;
+    margin-right: 5px;
+}

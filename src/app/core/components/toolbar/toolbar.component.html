@@ -1,0 +1,9 @@
+<mat-toolbar color='primary' class="navbar">
+
+    <span>Pay service</span>
+    <span class="example-spacer"></span>
+
+    <nav class="nav-buttons" color='primary'>
+        <a *ngFor="let item of items" [routerLink]="item.url" routerLinkActive="active">{{item.nombre}}</a>
+    </nav>
+</mat-toolbar>

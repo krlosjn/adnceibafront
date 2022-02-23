@@ -1,0 +1,45 @@
+<div class="container">
+    <div>
+        <h1>Lista de Clientes</h1>
+    </div>
+
+    <div>
+        <mat-table [dataSource]="listarCliente | async" class="mat-elevation-z8">
+
+            <ng-container matColumnDef="id">
+                <mat-header-cell *matHeaderCellDef> id </mat-header-cell>
+                <mat-cell *matCellDef="let element"> {{element.id}} </mat-cell>
+            </ng-container>
+
+            <ng-container matColumnDef="nombre">
+                <mat-header-cell *matHeaderCellDef> Nombre </mat-header-cell>
+                <mat-cell *matCellDef="let element"> {{element.nombre}} </mat-cell>
+            </ng-container>
+
+            <ng-container matColumnDef="Tipo Documento">
+                <mat-header-cell *matHeaderCellDef> tipo documento </mat-header-cell>
+                <mat-cell *matCellDef="let element"> {{element.tipoDocumento}} </mat-cell>
+            </ng-container>
+
+            <ng-container matColumnDef="Número Documento">
+                <mat-header-cell *matHeaderCellDef> numero documento </mat-header-cell>
+                <mat-cell *matCellDef="let element"> {{element.numeroDocumento}} </mat-cell>
+            </ng-container>
+
+
+            <ng-container matColumnDef="acciones">
+                <mat-header-cell *matHeaderCellDef> Acciones </mat-header-cell>
+                <mat-cell *matCellDef="let element;">
+                    <button id="reservar" class="accion_button" mat-mini-fab color="primary" matTooltip="Crear C" (click)="enviarInformacion(element)" routerLinkActive="active">
+                </button>
+
+                </mat-cell>
+            </ng-container>
+
+            <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+            <mat-row id="cliente-row" *matRowDef="let row; columns: displayedColumns;"></mat-row>
+        </mat-table>
+    </div>
+
+</div>
+<router-outlet></router-outlet>

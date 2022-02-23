@@ -1,0 +1,16 @@
+.example-spacer {
+    flex: 1 1 auto;
+  }
+
+.nav-buttons a {
+    margin-right: 1rem;
+    text-decoration: none;
+    color: black;
+ }
+
+ .navbar {
+  justify-content: space-between; }
+
+  .active {
+    border-bottom: 1px solid rgb(236, 14, 14); }
+  

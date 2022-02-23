@@ -1,0 +1,54 @@
+form {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+}
+
+.mat-card {
+    width: 25vw;
+}
+
+@media (max-width: 992px) {
+    .mat-card {
+        width: 50vw;
+    }
+}
+
+@media (max-width: 480px) {
+    .mat-card {
+        width: 100vw;
+    }
+}
+
+.mat-card-header {
+    justify-content: center;
+}
+
+.mat-card-actions {
+    display: flex;
+    justify-content: center;
+}
+
+.mat-form-field {
+    display: flex;
+    justify-content: center;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+
+input[type=number] {
+    -moz-appearance: textfield;
+}
+
+.contenido {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+}
+
+
+/*# sourceMappingURL=crear-cliente.component.css.map */
