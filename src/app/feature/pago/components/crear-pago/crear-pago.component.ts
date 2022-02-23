@@ -21,9 +21,9 @@ export class CrearPagoComponent implements OnInit {
   }
 
   crearPago(){
-    const body = {...this.pagoForm.value, fecha: this.pagoService.formatearFecha(this.pagoForm.get('fecha')?.value)};
+    //const body = {...this.pagoForm.value, fecha: this.pagoService.formatearFecha(this.pagoForm.get('fecha')?.value)};
 
-    this.pagoService.guardar(body).subscribe(() => {
+    this.pagoService.guardar(this.pagoForm.value).subscribe(() => {
       this.router.navigate(['pagos/listar']);
     }, err => {
       if (err.error.nombreExcepcion && err.error.mensaje){

@@ -3,14 +3,14 @@ export class Cliente
 
     id: number;
     nombre: string;
-    tipoDocumento: string;
-    numeroDocumento: string;
+    tipoIdentificacion: string;
+    numeroIdentificacion: string;
 
-    constructor( id: number, nombre: string, tipoDocumento: string, numeroDocumento: string){
+    constructor( id: number, nombre: string, tipoIdentificacion: string, numeroIdentificacion: string){
         this.id = id;
         this.nombre = nombre;
-        this.tipoDocumento = tipoDocumento;
-        this.numeroDocumento = numeroDocumento;
+        this.tipoIdentificacion = tipoIdentificacion;
+        this.numeroIdentificacion = numeroIdentificacion;
     }
 
 }

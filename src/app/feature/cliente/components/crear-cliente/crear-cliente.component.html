@@ -17,8 +17,8 @@
 
             <mat-form-field>
                 <mat-label>Tipo documento</mat-label>
-                <input matInput placeholder="Tipo documento" required formControlName="tipoDocumento" id="tipoDocumento" name="tipoDocumento">
-                <mat-error *ngIf="clienteForm.controls.tipoDocumento.errors?.required">
+                <input matInput placeholder="Tipo documento" required formControlName="tipoIdentificacion" id="tipoIdentificacion" name="tipoIdentificacion">
+                <mat-error *ngIf="clienteForm.controls.tipoIdentificacion.errors?.required">
                     El tipo de documento es <strong>requerido</strong>
                 </mat-error>
             </mat-form-field>
@@ -26,8 +26,8 @@
 
             <mat-form-field>
                 <mat-label>Número documento</mat-label>
-                <input matInput placeholder="Número documento" required formControlName="numeroDocumento" id="numeroDocumento" name="numeroDocumento">
-                <mat-error *ngIf="clienteForm.controls.numeroDocumento.errors?.required">
+                <input matInput placeholder="Número documento" required formControlName="numeroIdentificacion" id="numeroIdentificacion" name="numeroIdentificacion">
+                <mat-error *ngIf="clienteForm.controls.numeroIdentificacion.errors?.required">
                     El número de documento es <strong>requerido</strong>
                 </mat-error>
             </mat-form-field>

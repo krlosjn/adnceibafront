@@ -4,7 +4,7 @@
     </div>
 
     <div>
-        <mat-table [dataSource]="listarCliente | async" class="mat-elevation-z8">
+        <mat-table [dataSource]="listarCliente" class="mat-elevation-z8">
 
             <ng-container matColumnDef="id">
                 <mat-header-cell *matHeaderCellDef> id </mat-header-cell>
@@ -17,13 +17,13 @@
             </ng-container>
 
             <ng-container matColumnDef="Tipo Documento">
-                <mat-header-cell *matHeaderCellDef> tipo documento </mat-header-cell>
-                <mat-cell *matCellDef="let element"> {{element.tipoDocumento}} </mat-cell>
+                <mat-header-cell *matHeaderCellDef> tipo identificacion </mat-header-cell>
+                <mat-cell *matCellDef="let element"> {{element.tipoIdentificacion}} </mat-cell>
             </ng-container>
 
             <ng-container matColumnDef="Número Documento">
-                <mat-header-cell *matHeaderCellDef> numero documento </mat-header-cell>
-                <mat-cell *matCellDef="let element"> {{element.numeroDocumento}} </mat-cell>
+                <mat-header-cell *matHeaderCellDef> numero identificacion </mat-header-cell>
+                <mat-cell *matCellDef="let element"> {{element.numeroIdentificacion}} </mat-cell>
             </ng-container>
 
 

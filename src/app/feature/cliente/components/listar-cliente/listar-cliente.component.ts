@@ -12,7 +12,7 @@ import { ClienteService } from '../../shared/services/cliente.service';
 export class ListarClienteComponent implements OnInit {
 
   public listarCliente: Observable<Cliente[]>;
-  displayedColumns: string[] = [ 'nombre', 'TipoDocumento', 'numeroDocumento', 'acciones'];
+  displayedColumns: string[] = [ 'id', 'nombre', 'tipoIdentificacion', 'numeroIdentificacion', 'acciones'];
 
   constructor(
     protected clienteService: ClienteService,
