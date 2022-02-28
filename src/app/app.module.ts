@@ -27,7 +27,7 @@ import { FormsModule } from '@angular/forms';
     BrowserAnimationsModule,
     PagoModule,
     ClienteModule,
-    FormsModule
+    FormsModule,
   ],
   providers: [CookieService],
     bootstrap: [AppComponent],

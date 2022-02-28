@@ -9,7 +9,7 @@ import { HttpResponse } from '@angular/common/http';
 describe('PagoService', () => {
   let httpMock: HttpTestingController;
   let service: PagoService;
-  const apiEndpointCliente = `${environment.endpoint}/clientes`;
+  const apiEndPointPago = `${environment.endpoint}/pagos`;
 
   beforeEach(() => {
     const injector = TestBed.configureTestingModule({
@@ -26,34 +26,31 @@ describe('PagoService', () => {
   });
 
   it('deberia listar pagos', () => {
-    const dummyclientes = [
+    const dummyPagos = [
       new Pago(1, '1234', 1 , 200000, 170000, new Date(2022, 2, 22), new Date(2022, 3, 22)),
       new Pago(2, '4321', 1 , 200000, 170000, new Date(2022, 2, 22), new Date(2022, 3, 22))
     ];
-    service.consultar().subscribe(clientes => {
-      expect(clientes.length).toBe(2);
-      expect(clientes).toEqual(dummyclientes);
+    service.consultar().subscribe(pagos => {
+      expect(pagos.length).toBe(2);
+      expect(pagos).toEqual(dummyPagos);
     });
-    const req = httpMock.expectOne(apiEndpointCliente);
+    const req = httpMock.expectOne(apiEndPointPago);
     expect(req.request.method).toBe('GET');
-    req.flush(dummyclientes);
+    req.flush(dummyPagos);
   });
 
   it('deberia crear un pago', () => {
     const dummyPago = {
-      id : 1,
       referenciaPago: '1234',
       idCliente: '1',
       valorBase: 200000,
-      valorTotal: 170000,
-      fechaRegistro: new Date(2022, 2, 22),
-      fechaProximoPago: new Date(2022, 3, 22)
+      fechaRegistro: new Date(2022, 2, 22)
     };
 
     service.guardar(dummyPago).subscribe((respuesta) => {
       expect(respuesta).toEqual(1);
     });
-    const req = httpMock.expectOne(apiEndpointCliente);
+    const req = httpMock.expectOne(apiEndPointPago);
     expect(req.request.method).toBe('POST');
     req.event(new HttpResponse<number>({body: 1}));
   });

@@ -19,7 +19,7 @@ describe('CrearClienteComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it('Debería crear el pago', () => {
     expect(component).toBeTruthy();
   });
 });

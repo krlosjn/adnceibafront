@@ -8,10 +8,10 @@ import { ListarPagoComponent } from './listar-pago.component';
 import { HttpService } from '@core/services/http.service';
 import { of } from 'rxjs';
 
-describe('ListarClienteComponent', () => {
+describe('ListarPagoComponent', () => {
   let component: ListarPagoComponent;
   let fixture: ComponentFixture<ListarPagoComponent>;
-  let clienteService: PagoService;
+  let pagoService: PagoService;
 
   const listaPagos: Pago[] = [
     new Pago(1, '1234', 1, 200000, 170000, new Date(2022, 2 , 22), new Date(2022, 3, 22 ) ),
@@ -34,8 +34,8 @@ describe('ListarClienteComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(ListarPagoComponent);
     component = fixture.componentInstance;
-    clienteService = TestBed.inject(PagoService);
-    spyOn(clienteService, 'consultar').and.returnValue(
+    pagoService = TestBed.inject(PagoService);
+    spyOn(pagoService, 'consultar').and.returnValue(
       of(listaPagos)
     );
     fixture.detectChanges();

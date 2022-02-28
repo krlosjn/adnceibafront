@@ -4,41 +4,44 @@
     </div>
 
     <div>
-        <mat-table [dataSource]="listarCliente" class="mat-elevation-z8">
+        <table mat-table [dataSource]="clientesArray" class="mat-elevation-z8">
 
             <ng-container matColumnDef="id">
-                <mat-header-cell *matHeaderCellDef> id </mat-header-cell>
-                <mat-cell *matCellDef="let element"> {{element.id}} </mat-cell>
+                <th *matHeaderCellDef> id </th>
+                <td mat-cell *matCellDef="let element"> {{element.id}} </td>
             </ng-container>
 
             <ng-container matColumnDef="nombre">
-                <mat-header-cell *matHeaderCellDef> Nombre </mat-header-cell>
-                <mat-cell *matCellDef="let element"> {{element.nombre}} </mat-cell>
+                <th *matHeaderCellDef> Nombre </th>
+                <td *matCellDef="let element"> {{element.nombre}} </td>
             </ng-container>
 
-            <ng-container matColumnDef="Tipo Documento">
-                <mat-header-cell *matHeaderCellDef> tipo identificacion </mat-header-cell>
-                <mat-cell *matCellDef="let element"> {{element.tipoIdentificacion}} </mat-cell>
+
+
+            <ng-container matColumnDef="tipoIdentificacion">
+                <th *matHeaderCellDef> Tipo tipoIdentificacion </th>
+                <td *matCellDef="let element"> {{element.tipoIdentificacion}} </td>
             </ng-container>
 
-            <ng-container matColumnDef="Número Documento">
-                <mat-header-cell *matHeaderCellDef> numero identificacion </mat-header-cell>
-                <mat-cell *matCellDef="let element"> {{element.numeroIdentificacion}} </mat-cell>
+
+            <ng-container matColumnDef="numeroIdentificacion">
+                <th *matHeaderCellDef> núm. Identificacion </th>
+                <td *matCellDef="let element"> {{element.numeroIdentificacion}} </td>
             </ng-container>
 
 
             <ng-container matColumnDef="acciones">
-                <mat-header-cell *matHeaderCellDef> Acciones </mat-header-cell>
-                <mat-cell *matCellDef="let element;">
-                    <button id="reservar" class="accion_button" mat-mini-fab color="primary" matTooltip="Crear C" (click)="enviarInformacion(element)" routerLinkActive="active">
+                <th *matHeaderCellDef> Crear cliente </th>
+                <td *matCellDef="let element;">
+                    <button id="clientes" class="accion_button" mat-mini-fab color="primary" matTooltip="Crear C" (click)="enviarInformacion(element)" routerLinkActive="active">
                 </button>
 
-                </mat-cell>
+                </td>
             </ng-container>
 
-            <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
-            <mat-row id="cliente-row" *matRowDef="let row; columns: displayedColumns;"></mat-row>
-        </mat-table>
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row id="cliente-row" *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
     </div>
 
 </div>

@@ -4,44 +4,44 @@
     </div>
 
     <div>
-        <mat-table [dataSource]="listarPago | async" class="mat-elevation-z8">
+        <table mat-table [dataSource]="listarPago" class="mat-elevation-z8">
 
             <ng-container matColumnDef="id">
-                <mat-header-cell *matHeaderCellDef> ID </mat-header-cell>
-                <mat-cell *matCellDef="let element"> {{element.id}} </mat-cell>
+                <th *matHeaderCellDef> ID </th>
+                <td *matCellDef="let element"> {{element.id}} </td>
             </ng-container>
 
             <ng-container matColumnDef="Referencia Pago">
-                <mat-header-cell *matHeaderCellDef> Referencia Pago </mat-header-cell>
-                <mat-cell *matCellDef="let element"> {{element.referenciaPago}} </mat-cell>
+                <th *matHeaderCellDef> Referencia Pago </th>
+                <td *matCellDef="let element"> {{element.referenciaPago}} </td>
             </ng-container>
 
             <ng-container matColumnDef="Id Cliente">
-                <mat-header-cell *matHeaderCellDef> ID Cliente </mat-header-cell>
-                <mat-cell *matCellDef="let element"> {{element.idCliente}} </mat-cell>
+                <th *matHeaderCellDef> ID Cliente </th>
+                <td *matCellDef="let element"> {{element.idCliente}} </td>
             </ng-container>
 
             <ng-container matColumnDef="Valor Base">
-                <mat-header-cell *matHeaderCellDef> Valor Pagar </mat-header-cell>
-                <mat-cell *matCellDef="let element"> {{element.valorBase}} </mat-cell>
+                <th *matHeaderCellDef> Valor Pagar </th>
+                <td *matCellDef="let element"> {{element.valorBase}} </td>
             </ng-container>
 
 
             <ng-container matColumnDef="Valor Total">
-                <mat-header-cell *matHeaderCellDef> Valor Total </mat-header-cell>
-                <mat-cell *matCellDef="let element"> {{element.valorTotal}} </mat-cell>
+                <th *matHeaderCellDef> Valor Total </th>
+                <td *matCellDef="let element"> {{element.valorTotal}} </td>
             </ng-container>
 
 
 
             <ng-container matColumnDef="acciones">
-                <mat-header-cell *matHeaderCellDef> Acciones </mat-header-cell>
-                <mat-cell *matCellDef="let element;">
+                <th *matHeaderCellDef> Acciones </th>
+                <td *matCellDef="let element;">
                     <button id="pago" class="accion_button" mat-mini-fab color="primary" matTooltip="Crear C" (click)="enviarInformacion(element)" routerLinkActive="active">
                       <button id="pagoEliminar" class="accion_button" mat-mini-fab color="warn" matTooltip="Eliminar" (click)="eliminarRegistro(element)" routerLinkActive="active"></button>
                     </button>
 
-                </mat-cell>
+                </td>
             </ng-container>
 
 
@@ -53,7 +53,7 @@
 
             <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
             <mat-row id="pago-row" *matRowDef="let row; columns: displayedColumns;"></mat-row>
-        </mat-table>
+        </table>
     </div>
 
 </div>

@@ -9,10 +9,12 @@ export class ClienteService {
   constructor(protected http: HttpService) {}
 
   public consultar() {
+    console.log('estamos consultar');
     return this.http.doGet<Cliente[]>(`${environment.endpoint}/clientes`, this.http.optsName('consultar clientes'));
   }
 
   public guardar(cliente: any){
+    console.log('Estamos en crear cliente');
     return this.http.doPost<any, number>(`${environment.endpoint}/clientes`, cliente);
   }
 

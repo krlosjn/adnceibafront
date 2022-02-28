@@ -11,16 +11,24 @@ import { ClienteService } from '../../shared/services/cliente.service';
 })
 export class ListarClienteComponent implements OnInit {
 
-  public listarCliente: Observable<Cliente[]>;
+  public listaCliente: Observable<Cliente[]>;
   displayedColumns: string[] = [ 'id', 'nombre', 'tipoIdentificacion', 'numeroIdentificacion', 'acciones'];
+
+  public clientesArray: Array<any>;
 
   constructor(
     protected clienteService: ClienteService,
     private router: Router,
-  ) { }
+  ) {
+    console.log('Constructor ciente');
+  }
 
   ngOnInit(): void {
-    this.listarCliente = this.clienteService.consultar();
+     this.clienteService.consultar().subscribe((data) => {
+      this.clientesArray = data;
+      console.log('Hola mundo !', data);
+
+    } );
   }
 
   enviarInformacion(element: any){

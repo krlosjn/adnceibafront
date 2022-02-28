@@ -10,7 +10,6 @@ import { SharedModule } from '@shared/shared.module';
 
 
 
-
 @NgModule({
   declarations: [
     ListarClienteComponent,
@@ -21,7 +20,8 @@ import { SharedModule } from '@shared/shared.module';
     CommonModule,
     ClienteRoutingModule,
     MaterialModule,
-    SharedModule
+    SharedModule,
+
   ],
   providers: [ClienteService]
 })
