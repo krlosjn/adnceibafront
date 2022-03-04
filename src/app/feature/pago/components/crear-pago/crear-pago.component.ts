@@ -21,9 +21,10 @@ export class CrearPagoComponent implements OnInit {
   }
 
   crearPago(){
-    //const body = {...this.pagoForm.value, fecha: this.pagoService.formatearFecha(this.pagoForm.get('fecha')?.value)};
+    //const body = {...this.pagoForm.value, fecha: this.pagoService.formatearFecha(this.pagoForm.get('fechaRegistro')?.value)};
 
     this.pagoService.guardar(this.pagoForm.value).subscribe(() => {
+      console.log(this.pagoForm);
       this.router.navigate(['pagos/listar']);
     }, err => {
       if (err.error.nombreExcepcion && err.error.mensaje){
@@ -32,21 +33,6 @@ export class CrearPagoComponent implements OnInit {
       }
     });
   }
-
-/*
-
-  crear(){
-    this.clienteService.guardar(this.clienteForm.value).subscribe(() => {
-      this.router.navigate(['clientes/listar']);
-    }, err => {
-      if (err.error.nombreExcepcion && err.error.mensaje){
-        const tituloSeparado = err.error.nombreExcepcion.replace(/([a-z](?=[A-Z]))/g, '$1 ');
-        this.dialog.open(DialogComponent, { data: { title: tituloSeparado, content: err.error.mensaje}});
-      }
-    });
-  }
-*/
-
 
   construirFormulario(){
     this.pagoForm = new FormGroup({
