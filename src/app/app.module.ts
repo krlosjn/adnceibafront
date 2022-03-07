@@ -7,7 +7,7 @@ import { HomeComponent } from '@home/home.component';
 import { CoreModule } from '@core/core.module';
 import { CookieService } from 'ngx-cookie-service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { PagoModule } from './feature/pago/Pago.module';
+import { PagoModule } from './feature/pago/pago.module';
 import { ClienteModule } from './feature/cliente/cliente.module';
 import { FormsModule } from '@angular/forms';
 
