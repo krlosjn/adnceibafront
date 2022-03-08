@@ -2,7 +2,7 @@ export class Pago {
 
     id: number;
     referenciaPago: string;
-    idCliente: number;
+    cliente: number;
     valorBase: number;
     valorTotal: number;
     fechaRegistro: Date;
@@ -11,10 +11,10 @@ export class Pago {
 
 
     // tslint:disable-next-line: max-line-length
-    constructor( id: number, referenciaPago: string, idCliente: number,  valorBase: number, valorTotal: number, fechaRegistro: Date , fechaProximoPago: Date){
+    constructor( id: number, referenciaPago: string, cliente: number,  valorBase: number, valorTotal: number, fechaRegistro: Date , fechaProximoPago: Date){
       this.id = id;
       this.referenciaPago = referenciaPago;
-      this.idCliente = idCliente;
+      this.cliente = cliente;
       this.valorBase = valorBase;
       this.valorTotal = valorTotal;
       this.fechaRegistro = fechaRegistro;

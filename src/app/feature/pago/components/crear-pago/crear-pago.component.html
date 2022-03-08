@@ -17,11 +17,21 @@
 
             <mat-form-field>
                 <mat-label>ide cliente</mat-label>
-                <input matInput placeholder="idCliente" required formControlName="idCliente" id="tipoDocumento" name="idCliente">
-                <mat-error *ngIf="pagoForm.controls.idCliente.errors?.required">
+                <input matInput placeholder="cliente" required formControlName="cliente" id="cliente" name="cliente">
+                <mat-error *ngIf="pagoForm.controls.cliente.errors?.required">
                     El ide cliente es <strong>requerido</strong>
                 </mat-error>
             </mat-form-field>
+
+
+            <mat-form-field>
+                <mat-label>Aplica descuento</mat-label>
+                <input matInput placeholder="aplicaDescuento" required formControlName="aplicaDescuento" id="aplicaDescuento" name="aplicaDescuento">
+                <mat-error *ngIf="pagoForm.controls.aplicaDescuento.errors?.required">
+                    El campo aplica descuento es <strong>requerido</strong>
+                </mat-error>
+            </mat-form-field>
+
 
 
             <mat-form-field>
@@ -33,22 +43,13 @@
             </mat-form-field>
 
 
-            <mat-form-field>
-                <mat-label>Fecha</mat-label>
-                <input matInput [matDatepicker]="datepicker" required formControlName="fechaRegistro" id="fechaRegistro" name="fechaRegistro">
-                <mat-datepicker-toggle matSuffix [for]="datepicker"></mat-datepicker-toggle>
-                <mat-datepicker #datepicker>
-                    <mat-datepicker-actions>
-                        <button mat-button matDatepickerCancel>Cancel</button>
-                        <button mat-raised-button color="primary" matDatepickerApply>Apply</button>
-                    </mat-datepicker-actions>
-                </mat-datepicker>
+            <mat-form-field appearance="fill">
+                <mat-label>Fecha registro</mat-label>
+                <input matInput type="date" formControlName="fechaRegistro" id="fechaRegistro" name="fechaRegistro" class="form-control" matInput>
                 <mat-error *ngIf="pagoForm.controls.fechaRegistro.errors?.required">
                     La fecha es un campo <strong>requerido</strong>
                 </mat-error>
             </mat-form-field>
-
-
 
         </mat-card-content>
 

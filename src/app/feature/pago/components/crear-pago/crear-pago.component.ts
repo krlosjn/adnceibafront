@@ -21,7 +21,6 @@ export class CrearPagoComponent implements OnInit {
   }
 
   crearPago(){
-    //const body = {...this.pagoForm.value, fecha: this.pagoService.formatearFecha(this.pagoForm.get('fechaRegistro')?.value)};
 
     this.pagoService.guardar(this.pagoForm.value).subscribe(() => {
       console.log(this.pagoForm);
@@ -37,7 +36,8 @@ export class CrearPagoComponent implements OnInit {
   construirFormulario(){
     this.pagoForm = new FormGroup({
       referenciaPago: new FormControl('', [Validators.required]),
-      idCliente: new FormControl('', [Validators.required]),
+      cliente: new FormControl('', [Validators.required]),
+      aplicaDescuento: new FormControl('', [Validators.required]),
       valorBase: new FormControl('', [Validators.required]),
       fechaRegistro: new FormControl('', [Validators.required])
     });
