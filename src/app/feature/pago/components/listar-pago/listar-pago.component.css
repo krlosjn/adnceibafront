@@ -5,24 +5,16 @@
     margin-top: 10px;
 }
 
-.mat-table {
-    overflow: auto;
+table {
+    width: 100%;
 }
 
-.mat-header-cell {
-    padding: 0.5rem;
-    text-align: center;
-}
-
-.mat-cell {
-    padding: 0.5rem;
-    text-align: center;
-}
-
-h1 {
-    text-align: center;
-    margin-top: 1rem;
-    font-weight: bold;
+th,
+td {
+    width: 25%;
+    text-align: left;
+    vertical-align: top;
+    margin-left: 15px;
 }
 
 .accion_button {

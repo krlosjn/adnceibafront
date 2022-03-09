@@ -13,7 +13,8 @@ import { PagoService } from '../../shared/services/pago.service';
 export class ListarPagoComponent implements OnInit {
 
   public listarPago: Observable<Pago[]>;
-  displayedColumns: string[] = [ 'referenciaPago', 'idCliente', 'valorBase', 'valorTotal', 'fechaRegistro', 'fechaProximoPago'];
+  public pagosArray: Array<any>;
+  displayedColumns: string[] = [ 'id', 'referenciaPago', 'cliente', 'valorBase', 'valorTotal', 'fechaRegistro', 'fechaProximoPago'];
 
   constructor(
     protected pagoService: PagoService,
@@ -21,8 +22,12 @@ export class ListarPagoComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.listarPago = this.pagoService.consultar();
-  }
+    this.pagoService.consultar().subscribe((data) => {
+     this.pagosArray = data;
+     console.log('Hola mundo desde lista pagos component !', data);
+
+   } );
+ }
 
   enviarInformacion(element: any){
     console.log(element);

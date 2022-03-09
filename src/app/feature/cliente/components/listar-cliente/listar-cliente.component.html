@@ -3,6 +3,8 @@
         <h1>Lista de Clientes</h1>
     </div>
 
+
+
     <div>
         <table mat-table [dataSource]="clientesArray" class="mat-elevation-z8">
 
@@ -33,14 +35,13 @@
             <ng-container matColumnDef="acciones">
                 <th *matHeaderCellDef> Crear cliente </th>
                 <td *matCellDef="let element;">
-                    <button id="clientes" class="accion_button" mat-mini-fab color="primary" matTooltip="Crear C" (click)="enviarInformacion(element)" routerLinkActive="active">
-                </button>
-
+                    <button id="clientes" class="accion_button" mat-mini-fab color="primary" matTooltip="Crear C" (click)="enviarInformacion(element)" routerLinkActive="active">Crear</button>
                 </td>
             </ng-container>
 
-            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-            <tr mat-row id="cliente-row" *matRowDef="let row; columns: displayedColumns;"></tr>
+            <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+            <mat-row id="pago-row" *matRowDef="let row; columns: displayedColumns;"></mat-row>
+
         </table>
     </div>
 

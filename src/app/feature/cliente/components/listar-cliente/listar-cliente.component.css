@@ -5,18 +5,16 @@
     margin-top: 10px;
 }
 
-.mat-table {
-    overflow: auto;
+table {
+    width: 100%;
 }
 
-.mat-header-cell {
-    padding: 0.5rem;
-    text-align: center;
-}
-
-.mat-cell {
-    padding: 0.5rem;
-    text-align: center;
+th,
+td {
+    width: 25%;
+    text-align: left;
+    vertical-align: top;
+    margin-left: 15px;
 }
 
 h1 {

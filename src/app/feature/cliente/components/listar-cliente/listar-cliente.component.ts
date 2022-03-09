@@ -31,7 +31,7 @@ export class ListarClienteComponent implements OnInit {
     } );
   }
 
-  enviarInformacion(element: any){
+  public enviarInformacion(element: any): void{
     console.log(element);
     this.router.navigate(['/clientes/crear', {obj: JSON.stringify(element)}]);
 
