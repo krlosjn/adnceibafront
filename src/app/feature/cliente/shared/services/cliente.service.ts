@@ -18,4 +18,9 @@ export class ClienteService {
     return this.http.doPost<any, number>(`${environment.endpoint}/clientes`, cliente);
   }
 
+  public eliminar(cliente: any) {
+    console.log('Se ejecuta eliminar cliente');
+    return this.http.doDelete<number>(`${environment.endpoint}/clientes/${cliente.id}`, this.http.optsName('Eliminar cliente'));
+  }
+
 }

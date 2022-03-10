@@ -12,15 +12,15 @@ import { ClienteService } from '../../shared/services/cliente.service';
 export class ListarClienteComponent implements OnInit {
 
   public listaCliente: Observable<Cliente[]>;
-  displayedColumns: string[] = [ 'id', 'nombre', 'tipoIdentificacion', 'numeroIdentificacion', 'acciones'];
+  displayedColumns: string[] = [ 'id', 'nombre', 'tipoIdentificacion', 'numeroIdentificacion', 'acciones', 'accionesDos'];
 
-  public clientesArray: Array<any>;
+  public clientesArray: Array<Cliente>;
 
   constructor(
     protected clienteService: ClienteService,
     private router: Router,
   ) {
-    console.log('Constructor ciente');
+    console.log('Constructor cliente');
   }
 
   ngOnInit(): void {
@@ -35,6 +35,15 @@ export class ListarClienteComponent implements OnInit {
     console.log(element);
     this.router.navigate(['/clientes/crear', {obj: JSON.stringify(element)}]);
 
+  }
+
+
+  public eliminarInformacion(cliente: Cliente) {
+    this.clienteService.eliminar(cliente)
+      .subscribe(() => {
+        this.router.navigate(['clientes/crear']);
+      }
+      );
   }
 
 }

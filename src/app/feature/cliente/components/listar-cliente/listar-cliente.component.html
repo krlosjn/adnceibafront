@@ -39,6 +39,22 @@
                 </td>
             </ng-container>
 
+
+
+            <ng-container matColumnDef="accionesDos">
+                <th *matHeaderCellDef> Eliminar cliente </th>
+                <td *matCellDef="let element;">
+                    <button id="clientes" class="accion_button" mat-mini-fab color="primary" matTooltip="Crear C" (click)="eliminarInformacion(element)" routerLinkActive="active">Eliminar</button>
+                </td>
+            </ng-container>
+
+
+
+
+
+
+
+
             <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
             <mat-row id="pago-row" *matRowDef="let row; columns: displayedColumns;"></mat-row>
 
