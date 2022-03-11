@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MatTableDataSource } from '@angular/material/table';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import Swal from 'sweetalert2';
@@ -12,6 +13,7 @@ import { PagoService } from '../../shared/services/pago.service';
 })
 export class ListarPagoComponent implements OnInit {
 
+  public dataSource = new MatTableDataSource<Pago>();
   public listarPago: Observable<Pago[]>;
   public pagosArray: Array<any>;
   displayedColumns: string[] = [ 'id', 'referenciaPago', 'cliente', 'valorBase', 'valorTotal', 'fechaRegistro', 'fechaProximoPago'];
@@ -21,13 +23,13 @@ export class ListarPagoComponent implements OnInit {
     private router: Router,
   ) { }
 
-  ngOnInit(): void {
-    this.pagoService.consultar().subscribe((data) => {
-     this.pagosArray = data;
-     console.log('Hola mundo desde lista pagos component !', data);
+  ngOnInit(): void  {
+    this.listarPago = this.pagoService.consultar();
+    this.listarPago.subscribe(data => {
+      this.dataSource.data = data;
+    });
+  }
 
-   } );
- }
 
   enviarInformacion(element: any){
     console.log(element);

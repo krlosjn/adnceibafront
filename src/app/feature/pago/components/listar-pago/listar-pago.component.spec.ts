@@ -8,12 +8,12 @@ import { ListarPagoComponent } from './listar-pago.component';
 import { HttpService } from '@core/services/http.service';
 import { of } from 'rxjs';
 
-describe('ListarPagoComponent', () => {
+describe('Listar pago component', () => {
   let component: ListarPagoComponent;
   let fixture: ComponentFixture<ListarPagoComponent>;
   let pagoService: PagoService;
 
-  const listaPagos: Pago[] = [
+  const listarPago: Pago[] = [
     new Pago(1, '1234', 1, 200000, 170000, new Date(2022, 2 , 22), new Date(2022, 3, 22 ) ),
     new Pago(2, '4321', 1, 200000, 170000, new Date(2022, 2 , 21), new Date(2022, 3, 21 ) )
   ];
@@ -26,7 +26,7 @@ describe('ListarPagoComponent', () => {
         HttpClientModule,
         RouterTestingModule
       ],
-      providers: [ListarPagoComponent, HttpService]
+      providers: [ListarPagoComponent, HttpService, PagoService]
     })
     .compileComponents();
   });
@@ -36,12 +36,12 @@ describe('ListarPagoComponent', () => {
     component = fixture.componentInstance;
     pagoService = TestBed.inject(PagoService);
     spyOn(pagoService, 'consultar').and.returnValue(
-      of(listaPagos)
+      of(listarPago)
     );
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it('Debería listas los pagos', () => {
     expect(component).toBeTruthy();
     component.listarPago.subscribe(resultado => {
       expect(resultado.length).toBe(2);

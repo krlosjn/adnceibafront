@@ -9,7 +9,7 @@ import { of } from 'rxjs';
 
 import { ListarClienteComponent } from './listar-cliente.component';
 
-describe('ListarClientesComponent', () => {
+describe('Listar clientes component', () => {
   let component: ListarClienteComponent;
   let fixture: ComponentFixture<ListarClienteComponent>;
   let clienteService: ClienteService;
@@ -35,6 +35,8 @@ describe('ListarClientesComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(ListarClienteComponent);
     component = fixture.componentInstance;
+    fixture.detectChanges();
+    fixture.detectChanges();
     clienteService = TestBed.inject(ClienteService);
     spyOn(clienteService, 'consultar').and.returnValue(
       of(listaCliente)

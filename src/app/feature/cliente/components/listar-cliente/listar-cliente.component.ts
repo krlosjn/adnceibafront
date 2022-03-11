@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MatTableDataSource } from '@angular/material/table';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { Cliente } from '../../shared/model/cliente';
@@ -11,8 +12,12 @@ import { ClienteService } from '../../shared/services/cliente.service';
 })
 export class ListarClienteComponent implements OnInit {
 
+
+  public dataSource = new MatTableDataSource<Cliente>();
   public listaCliente: Observable<Cliente[]>;
-  displayedColumns: string[] = [ 'id', 'nombre', 'tipoIdentificacion', 'numeroIdentificacion', 'acciones', 'accionesDos'];
+  public cliente: Cliente;
+
+  public displayedColumns: string[] = [ 'id', 'nombre', 'tipoIdentificacion', 'numeroIdentificacion', 'acciones', 'accionesDos'];
 
   public clientesArray: Array<Cliente>;
 
@@ -23,14 +28,13 @@ export class ListarClienteComponent implements OnInit {
     console.log('Constructor cliente');
   }
 
-  ngOnInit(): void {
-     this.clienteService.consultar().subscribe((data) => {
-      this.clientesArray = data;
-      console.log('Hola mundo !', data);
 
-    } );
+  ngOnInit(): void  {
+    this.listaCliente = this.clienteService.consultar();
+    this.listaCliente.subscribe(data => {
+      this.dataSource.data = data;
+    });
   }
-
   public enviarInformacion(element: any): void{
     console.log(element);
     this.router.navigate(['/clientes/crear', {obj: JSON.stringify(element)}]);

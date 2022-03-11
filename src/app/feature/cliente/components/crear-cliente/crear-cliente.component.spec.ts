@@ -11,8 +11,8 @@ import { HttpService } from '@core/services/http.service';
 import { of } from 'rxjs';
 import { MaterialModule } from 'src/app/material.module';
 
-describe('CrearRestauranteComponent', () => {
-  let component: CrearClienteComponent;
+describe('crear cliente component ', () => {
+  let componentClient: CrearClienteComponent;
   let fixture: ComponentFixture<CrearClienteComponent>;
   let clienteService: ClienteService;
 
@@ -35,7 +35,8 @@ describe('CrearRestauranteComponent', () => {
 
   beforeEach(() => {
     fixture = TestBed.createComponent(CrearClienteComponent);
-    component = fixture.componentInstance;
+    fixture.detectChanges();
+    componentClient = fixture.componentInstance;
     clienteService = TestBed.inject(ClienteService);
     spyOn(clienteService, 'guardar').and.returnValue(
       of(1)
@@ -43,25 +44,22 @@ describe('CrearRestauranteComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
+  it('Debería crear el componente de crear cliente', () => {
+    expect(componentClient).toBeTruthy();
   });
 
   it('formulario es inválido cuando esta vacio', () => {
-    expect(component.clienteForm.valid).toBeFalsy();
+    expect(componentClient.clienteForm.valid).toBeFalsy();
   });
 
   it('Registrando cliente', () => {
-    expect(component.clienteForm.valid).toBeFalsy();
-    component.clienteForm.controls.nombre.setValue('Carlos');
-    component.clienteForm.controls.tipoIdentificacion.setValue('CC');
-    component.clienteForm.controls.numeroIdentificacion.setValue('1152205388');
-    expect(component.clienteForm.valid).toBeTruthy();
-
-    component.crear();
-
-
-    clienteService.guardar(component.clienteForm.value).subscribe((respuesta) => {
+    expect(componentClient.clienteForm.valid).toBeFalsy();
+    componentClient.clienteForm.controls.nombre.setValue('Carlos');
+    componentClient.clienteForm.controls.tipoIdentificacion.setValue('CC');
+    componentClient.clienteForm.controls.numeroIdentificacion.setValue('1152205388');
+    expect(componentClient.clienteForm.valid).toBeTruthy();
+    componentClient.crear();
+    clienteService.guardar(componentClient.clienteForm.value).subscribe((respuesta) => {
       expect(respuesta).toEqual(1);
     });
   });

@@ -20,7 +20,7 @@ describe('PagoService', () => {
     service = TestBed.inject(PagoService);
   });
 
-  it('should be created', () => {
+  it('Debería usar el servicio de pago ', () => {
     const pagoService: PagoService = TestBed.inject(PagoService);
     expect(pagoService).toBeTruthy();
   });
@@ -42,7 +42,8 @@ describe('PagoService', () => {
   it('deberia crear un pago', () => {
     const dummyPago = {
       referenciaPago: '1234',
-      idCliente: '1',
+      cliente: '1',
+      aplicaDescuento: true,
       valorBase: 200000,
       fechaRegistro: new Date(2022, 2, 22)
     };

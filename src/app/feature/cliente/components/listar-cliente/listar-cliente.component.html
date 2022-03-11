@@ -6,7 +6,7 @@
 
 
     <div>
-        <table mat-table [dataSource]="clientesArray" class="mat-elevation-z8">
+        <table mat-table [dataSource]="listaCliente" class="mat-elevation-z8">
 
             <ng-container matColumnDef="id">
                 <th *matHeaderCellDef> id </th>
@@ -47,13 +47,6 @@
                     <button id="clientes" class="accion_button" mat-mini-fab color="primary" matTooltip="Crear C" (click)="eliminarInformacion(element)" routerLinkActive="active">Eliminar</button>
                 </td>
             </ng-container>
-
-
-
-
-
-
-
 
             <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
             <mat-row id="pago-row" *matRowDef="let row; columns: displayedColumns;"></mat-row>
