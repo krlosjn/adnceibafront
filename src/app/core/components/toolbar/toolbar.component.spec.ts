@@ -19,7 +19,7 @@ describe('ToolbarComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it('Debería crear el componente de toolbar', () => {
     expect(component).toBeTruthy();
   });
 });

@@ -19,7 +19,7 @@ describe('ClienteComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it('Debería crear el componente cliente', () => {
     expect(component).toBeTruthy();
   });
 });
